@@ -1,1 +1,3 @@
-The repository writes a script that prints the absolute path name of current working directory
+WRITE BASH SCRIPT TO PRINT WORKING DIRECTORY
+
+This code writes a script to display the current working directory.
