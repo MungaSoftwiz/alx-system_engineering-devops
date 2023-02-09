@@ -1,3 +1,5 @@
 WRITE BASH SCRIPT TO PRINT WORKING DIRECTORY
 
-This code writes a script to display the current working directory.
+This directory contains projects on various topics of shell such as:
+  1.Shell navigation
+  2.Shell permissions
