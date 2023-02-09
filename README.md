@@ -1,4 +1,4 @@
-WRITE BASH SCRIPT TO PRINT WORKING DIRECTORY
+WRITE SCRIPTS TO PRINT VARIOUS COMMANDS IN SHELL
 
 This directory contains projects on various topics of shell such as:
   1.Shell navigation
