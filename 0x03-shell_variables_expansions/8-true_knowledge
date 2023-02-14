@@ -1,2 +1,2 @@
 #!/bin/bash
-my_num=$(printenv TRUEKNOWLEDGE)\n; echo $((128 + my_num))
+echo $((128+TRUEKNOWLEDGE))
