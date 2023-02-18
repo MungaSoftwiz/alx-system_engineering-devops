@@ -1,5 +1,17 @@
-WRITE SCRIPTS TO PRINT VARIOUS COMMANDS IN SHELL
+# System Engineering and DevOps
 
-This directory contains projects on various topics of shell such as:
-  1.Shell navigation
-  2.Shell permissions
+Welcome to the System Engineering and DevOps Projects Repository.
+This repository is dedicated to hosting various projects related to system
+engineering and DevOps.
+
+Below is a list of directories included:
+* [0x00. Shell, basics](0x00-Shell_basics)
+
+* [0x01. Shell, permissions](0x01-Shell_permissions)
+
+* [0x02. Shell, I/O Redirections and filters](0x02-shell_redirections)
+
+* [0x03. Shell, init files, variables and expansions](0x03-shell_variables_expansions)
+
+
+
