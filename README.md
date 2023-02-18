@@ -4,6 +4,8 @@ Welcome to the System Engineering and DevOps Projects Repository.
 This repository is dedicated to hosting various projects related to system
 engineering and DevOps.
 
+### Repository structure
+
 Below is a list of directories included:
 * [0x00. Shell, basics](0x00-Shell_basics)
 
