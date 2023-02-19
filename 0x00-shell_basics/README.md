@@ -39,11 +39,11 @@
 * [11. Lists](./11-lists)- lists all files (including hidden files) in the current
  directory, parent directory, and the `/boot` directory, in long format.
 
-* [12. File type](./12-file_type)-  prints the type of the file named 'iamafile'
- in the /tmp directory.
+* [12. File type](./12-file_type)-  prints the type of the file named `iamafile`
+ in the `/tmp directory`
 
 * [13. We are symbols, and inhabit symbols](./13-symbolic_link)- Create a
- symbolic link to '/bin/ls', named' __ls__'
+ symbolic link to `/bin/ls`, named `__ls__`
 
 * [14. Copy HTML files](./14-copy_html)- Copies all HTML files from current
  working directory to parent directory. Only copies files that did not exist in
@@ -52,17 +52,17 @@
 ## Advanced tasks
 
 * [15. Let’s move](./100-lets_move)- moves all files beginning with an uppercase
- letter to the directory /tmp/u.
+ letter to the directory `/tmp/u`.
 
 * [16. Clean Emacs](./101-clean_emacs)- deletes all files in the current working
- directory that end with the character ~.
+ directory that end with the character `~`.
 
-* [17. Tree](./102-tree)- creates the directories 'welcome/', 'welcome/to/' and
- 'welcome/to/school' in the current directory.
+* [17. Tree](./102-tree)- creates the directories `welcome/`, `welcome/to/` and
+ `welcome/to/school` in the current directory.
 
 * [18. Life is a series of commas, not periods](./103-commas)- lists all the
 files and directories of the current directory, separated by commas (,).
 
-* [19. File type: School](school.mgc)- Create a magic file 'school.mgc' that can
- be used with the command 'file' to detect School data files. School data files
- always contain the string 'SCHOOL' at offset 0.
+* [19. File type: School](school.mgc)- Create a magic file `school.mgc` that can
+ be used with the command `file` to detect School data files. School data files
+ always contain the string `SCHOOL` at offset 0.
