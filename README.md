@@ -1,9 +1,8 @@
 # System Engineering and DevOps
 
 Welcome to the System Engineering and DevOps Projects Repository.
-This repository is dedicated to hosting various projects related to system
-engineering and DevOps, that were taken as part of the Fullstack Software 
-Engineering program at ALX Africa.
+This repository is dedicated to hosting various projects and tasks related to
+system Engineering and DevOps.
 
 ### Repository structure
 
