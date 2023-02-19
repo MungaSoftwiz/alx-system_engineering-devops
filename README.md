@@ -7,6 +7,7 @@ engineering and DevOps.
 ### Repository structure
 
 Below is a list of directories included:
+
 * [0x00. Shell, basics](0x00-Shell_basics)
 
 * [0x01. Shell, permissions](0x01-Shell_permissions)
