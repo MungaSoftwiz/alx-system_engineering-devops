@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# print contents of directory using cut to format output
+
+contents=$(ls)
+for content in $contents
+do
+	name_after_dash=$(echo "$content" | cut -d"-" -f 2-)
+	echo "$name_after_dash"
+done
