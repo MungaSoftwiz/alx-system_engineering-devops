@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# displays process name and ID
+# you cannot use ps
+pgrep -l bash
