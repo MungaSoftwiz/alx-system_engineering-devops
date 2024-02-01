@@ -5,41 +5,18 @@
 apt update
 apt install nginx -y
 
-# Nginx listening on port 80
-sed -i 's/listen [::]:80 default_server;/listen 80;/g' /etc/nginx/sites-available/default
-
-cat <<EOF > /var/www/html/index.html
-Hello World!
-EOF
+# Index page HTML
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
 
 # custom 404 page
-cat <<EOF > /var/www/html/error-page.html
-Ceci n'est pas une page
-EOF
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 
 # Redirection & custom 404 page & configure Nginx so that its HTTP response contains a custom header
-echo "server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
+sudo sed -i '/listen 80 default_server/a error_page 404 /404.html;' /etc/nginx/sites-enabled/default
 
-	root /var/www/html;
-	index index.html index.htm index.nginx-debian.html;
-	server_name _;
+sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://github.com/MungaSoftwiz permanent;' /etc/nginx/sites-available/default
 
-	error_page 404 /error-page.html;
-        location /error-page.html {
-                root /var/www/html;
-                internal;
-        }
-
-	location /redirect_me {
-		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-	}
-
-	location / {
-		add_header X-Served-By "$(hostname)";
-	}
-}" > /etc/nginx/sites-available/default
+sudo sed -i "/listen 80 default_server/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
 
 # Restart nginx
 service nginx restart
