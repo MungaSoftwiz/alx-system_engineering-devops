@@ -5,19 +5,13 @@
 sudo apt-get update
 sudo apt-get install -y nginx
 
-# redirect a page
+sed -i 's/listen [::]:80 default_server;/listen 80;/g' /etc/nginx/sites-available/default
+
+# Content of index page
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
-replacement_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/MungaSoftwiz permanently;"
+# Configurationtion os the server using stream editor(sed)
+sed -i 's/server_name _;/server_name _;\n\trewrite \/redirect_me https:\/\/www.github.com\/MungaSoftwiz permanent;\n\terror_page 404 \/404.html;\n\tlocation \/404.html{\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}/' /etc/nginx/sites-enabled/default
 
-sudo sed -i "s/server_name _;/$replacement_string/" /etc/nginx/sites-enabled/default
-
-# create a 404 error page
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
-
-replacement_string="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\tinternal;\n\t}"
-
-sudo sed -i "s/listen 80 default_server;/$replacement_string/" /etc/nginx/sites-enabled/default
-
-# restart nginx after config changes
+# Restart nginx after config changes
 sudo service nginx restart
