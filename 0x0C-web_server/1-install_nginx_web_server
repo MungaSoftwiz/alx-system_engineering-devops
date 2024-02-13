@@ -3,15 +3,18 @@
 #+ listens to port 80
 #++ when querying nginx at root is prints "Hello World!"
 
-sudo apt-get install
-sudo apt-get install -y nginx
+apt-get update
+apt-get install -y nginx
 
-sudo mkdir -p /etc/nginx/html
-sudo bash -c 'echo "Hello World!" > /etc/nginx/html/index.html'
-sudo bash -c 'printf %s "server {
-    listen      80 default_server;
-    root        /etc/nginx/html;
-    index       index.html index.htm;
-}" > /etc/nginx/sites-available/default'
+# Nginx listening on port 80
 
-sudo service nginx restart
+sed -i 's/listen [::]:80 default_server;/listen 80;/g' /etc/nginx/sites-available/default
+
+# querying Nginx at its root / with a GET request (requesting a page) using curl
+
+cat <<EOF > /var/www/html/index.html
+Hello World!
+EOF
+
+# Restart nginx
+service nginx restart
