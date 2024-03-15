@@ -1,0 +1,30 @@
+# Routes an URL to a gunicorn server
+server {
+        listen 80 default_server;
+
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+        server_name 54.89.182.156;
+
+        add_header X-Served-By 259060-web-01;
+
+        error_page 404 /error-page.html;
+        location /error-page.html {
+                internal;
+        }
+
+
+        location /hbnb_static {
+                alias /data/web_static/current;
+        }
+
+        # Proxies requests to /airbnb-onepage/ to a gunicorn instance
+        location /airbnb-onepage/ {
+                proxy_pass http://localhost:5000/airbnb-onepage/;
+        }
+
+        # Proxies requests for /airbnb-dynamic/number_odd_or_even/ to a gunicorn instance
+        location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+                proxy_pass http://localhost:5001/number_odd_or_even/$1;
+       }
+}
