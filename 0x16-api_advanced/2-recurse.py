@@ -4,8 +4,10 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[], after=None):
+def recurse(subreddit, hot_list=None, after=None):
     """ Function queries the reddit API for hot topics """
+    if hot_list is None:
+        hot_list = []
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {"User-Agent": "MyUserAgent1.0"}
     params = {"after": after}
